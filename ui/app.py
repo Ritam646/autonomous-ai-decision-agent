@@ -30,7 +30,8 @@ if st.button("Run Agent"):
 import streamlit as st
 import requests
 
-API_URL = "http://localhost:8000/run-agent"
+API_URL = "https://autonomous-agent-api.onrender.com/run-agent"
+
 
 st.set_page_config(page_title="Autonomous Decision Agent", layout="wide")
 

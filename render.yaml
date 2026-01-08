@@ -1,0 +1,19 @@
+services:
+  # -------- FASTAPI BACKEND --------
+  - type: web
+    name: autonomous-agent-api
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port 8000
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+
+  # -------- STREAMLIT UI --------
+  - type: web
+    name: autonomous-agent-ui
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run ui/app.py --server.port 10000 --server.address 0.0.0.0
