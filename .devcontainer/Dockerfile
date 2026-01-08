@@ -1,0 +1,4 @@
+FROM mcr.microsoft.com/devcontainers/python:3.12
+
+WORKDIR /workspace
+RUN pip install --upgrade pip
