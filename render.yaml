@@ -1,7 +1,7 @@
 services:
-  # -------- FASTAPI BACKEND --------
+  # ---------------- API ----------------
   - type: web
-    name: autonomous-agent-api
+    name: autonomous-decision-agent-api
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt
@@ -10,9 +10,9 @@ services:
       - key: GROQ_API_KEY
         sync: false
 
-  # -------- STREAMLIT UI --------
+  # ---------------- UI ----------------
   - type: web
-    name: autonomous-agent-ui
+    name: autonomous-decision-agent-ui
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt

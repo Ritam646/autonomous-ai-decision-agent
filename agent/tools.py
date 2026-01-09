@@ -1,7 +1,7 @@
 from duckduckgo_search import DDGS
 import re
 
-# trusted domains for cloud content
+
 TRUSTED_KEYWORDS = [
     "aws", "amazon", "ec2", "lambda", "s3",
     "gcp", "google cloud", "compute engine",
@@ -32,11 +32,11 @@ def web_search(query: str, max_results=5):
             if not body:
                 continue
 
-            # filter non-English noise
+            
             if not is_english(body[:80]):
                 continue
 
-            # filter irrelevant content
+        
             if not any(k in body.lower() for k in TRUSTED_KEYWORDS):
                 continue
 
